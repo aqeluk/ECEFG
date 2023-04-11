@@ -114,7 +114,7 @@ export default function TwoColumn() {
                   to contact energy suppliers and network operators on your
                   behalf. We then produce a financial business case that models
                   the project and details the expected returns over a number of
-                  years. ECEFG act as the &apos;'glue&apos;' that binds all the various
+                  years. ECEFG act as the &apos;glue&apos; that binds all the various
                   parties together to deliver the project. This includes
                   planners, DNOs, technology providers, installers and funders.
                 </p>
