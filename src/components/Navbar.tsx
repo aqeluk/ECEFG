@@ -11,6 +11,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import Image from "next/image";
 
 const solutions = [
   {
@@ -181,10 +182,18 @@ export default function Navbar() {
             <div className="flex items-center">
               <a href="#" className="flex">
                 <span className="sr-only">Workflow</span>
-                <img
-                  className="h-8 w-auto sm:h-10"
+                <Image
+                  className="h-full w-screen"
                   src="/banner-bg.png"
                   alt=""
+                  width={150}
+                height={100}
+          style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+          }}
+          quality={80}
                 />
               </a>
             </div>
@@ -266,7 +275,7 @@ export default function Navbar() {
                                       className="-m-3 p-3 flex rounded-lg hover:bg-gray-100"
                                     >
                                       <div className="hidden sm:block flex-shrink-0">
-                                        <img
+                                        <Image
                                           className="w-32 h-20 object-cover rounded-md"
                                           src={post.imageUrl}
                                           alt=""
@@ -313,7 +322,7 @@ export default function Navbar() {
               <div className="pt-5 pb-6 px-5 sm:pb-8">
                 <div className="flex items-center justify-between">
                   <div>
-                    <img
+                    <Image
                       className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                       alt="Workflow"

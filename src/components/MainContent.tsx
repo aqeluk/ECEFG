@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function MainContent() {
     return (
       <div className="relative py-16 bg-blue-100 overflow-hidden">
@@ -105,24 +107,30 @@ At ECEFG, we are committed to helping businesses overcome the challenges of secu
             ECEFG offers a Power Purchase Agreement (PPA) that benefits both parties. In return for a mutually beneficial PPA, ECEFG will:
             </p>
             <ul className="text-xl" role="list">
-              <li>Provide a suitable Combined Heat and Power (CHP) Engine at no cost to cover the business's current and future power and heat requirements</li>
+              <li>Provide a suitable Combined Heat and Power (CHP) Engine at no cost to cover the business&apos;s current and future power and heat requirements</li>
               <li>Install a solar PV array if needed, at no cost to the business</li>
               <li>Offer a fully funded maintenance contract for all technical and operating components at no cost, ensuring maximum generating hours</li>
               <li>Implement sophisticated real-time metering, reporting, and 24/7 online monitoring for immediate operation and maintenance responses, at no cost</li>
               <li>Arrange all necessary insurance covers at no cost</li>
             </ul>
             <p className="text-xl my-8">
-            To safeguard the project's integrity, ECEFG creates a dedicated Special Purpose Vehicle (SPV) - a separate limited company that owns the title to the equipment and is protected from any potential impact of the ECEFG Group's failures. This ensures the project's continuity and stability
+            To safeguard the project&apos;s integrity, ECEFG creates a dedicated Special Purpose Vehicle (SPV) - a separate limited company that owns the title to the equipment and is protected from any potential impact of the ECEFG Group&apos;s failures. This ensures the project&apos;s continuity and stability
             </p>
            
           
             <figure>
-              <img
+              <Image
                 className="w-full rounded-lg"
                 src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                 alt=""
-                width={1310}
-                height={873}
+                width={2070}
+                height={2380}
+                style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+          }}
+          quality={80}
               />
               <figcaption className="text-black">Unlimited Potential working with ECEFG</figcaption>
             </figure>
