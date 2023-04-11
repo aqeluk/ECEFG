@@ -1,4 +1,5 @@
 import { CameraIcon } from '@heroicons/react/solid'
+import Image from 'next/image'
 
 export default function Aboutcontent() {
   return (
@@ -7,7 +8,7 @@ export default function Aboutcontent() {
         <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
         <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
           <div>
-            <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">&apos;
             Who We Are
             </h3>
           </div>
@@ -39,12 +40,18 @@ export default function Aboutcontent() {
             <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
               <figure>
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
-                  <img
+                  <Image
                     className="rounded-lg shadow-lg object-cover object-center"
                     src="https://images.unsplash.com/photo-1548613053-22087dd8edb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
                     alt="Whitney leaning against a railing on a downtown street"
-                    width={1184}
-                    height={1376}
+                    width={150}
+                  height={100}
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                  }}
+                  quality={80}
                   />
                 </div>
                 <figcaption className="mt-3 flex text-sm text-gray-500">
@@ -70,7 +77,7 @@ export default function Aboutcontent() {
           </div>
         </div>
               <p>
-              In today's context of closing power plants and inadequate power supplies, Renewable Energy is a reliable, cost-effective alternative to traditional heating and power sources. With rising energy prices and unpredictable weather patterns affecting grid resilience, Renewable Energy is becoming an increasingly attractive and viable option for many.
+              In today&apos;s context of closing power plants and inadequate power supplies, Renewable Energy is a reliable, cost-effective alternative to traditional heating and power sources. With rising energy prices and unpredictable weather patterns affecting grid resilience, Renewable Energy is becoming an increasingly attractive and viable option for many.
               </p>
              
               <p>
@@ -81,7 +88,7 @@ export default function Aboutcontent() {
             </h3>
           </div>
         </div>
-        We understand that while most people have heard of Combined Heat & Power solutions or Heat Pumps, they may not know which companies are leaders in the industry, which to avoid, or who can provide the best solutions. That's why we're here - with our industry knowledge, contacts, and experience, we can provide you and your clients with the best advice and deliver the most cost-effective renewable energy solutions.
+        We understand that while most people have heard of Combined Heat & Power solutions or Heat Pumps, they may not know which companies are leaders in the industry, which to avoid, or who can provide the best solutions. That&apos;s why we&apos;re here - with our industry knowledge, contacts, and experience, we can provide you and your clients with the best advice and deliver the most cost-effective renewable energy solutions.
               </p>
               
             </div>
