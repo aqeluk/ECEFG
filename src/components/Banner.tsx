@@ -11,9 +11,11 @@ export default function Banner() {
               Surviving the Energy Crisis
             </span>
             <span className="block sm:ml-2 sm:inline-block">
-              <Link href="/aboutus" className="text-white font-bold underline">
+              <Link href="/aboutus" legacyBehavior>
+<a className="text-white font-bold underline">
 
                 {" "}Learn more<span aria-hidden="true">&rarr;</span>
+</a>
 
               </Link>
             </span>
