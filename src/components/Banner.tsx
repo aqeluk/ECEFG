@@ -1,7 +1,11 @@
 import { XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-export default function Banner({ onClose }) {
+interface BannerProps {
+  onClose: () => void;
+}
+
+export default function Banner({ onClose }: BannerProps) {
   return (
     <div className="top-0 relative w-screen bg-gray-900">
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
