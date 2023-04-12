@@ -26,7 +26,7 @@ export default function Header({
               {p2Text}
             </p>
           )}
-          <p className="mt-20 my-20 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl order-last">
+          <p className="mt-20 my-20 text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl order-last">
             {p1Text}
           </p>
         </div>

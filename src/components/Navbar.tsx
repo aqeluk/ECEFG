@@ -53,18 +53,18 @@ const blogPosts = [
     name: "Solar PV",
     href: "/technologies/solar",
     preview:
-      "Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.",
+      "",
     imageUrl:
-      "https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80",
+      "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80",
   },
   {
     id: 2,
     name: "Wind",
     href: "/technologies/wind",
     preview:
-      "Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.",
+      "",
     imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80",
+      "https://images.unsplash.com/photo-1565085360602-de694f1d7650?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80",
   },
 ];
 
@@ -90,27 +90,13 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(!scrolled);
-      }
-    };
-
     document.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       // Clean up the listener
       document.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]);
+  }, []);
 
   return (
     <>
@@ -131,7 +117,7 @@ export default function Navbar() {
             <div className="hidden md:flex space-x-10">
               {/* Home */}
               <Link href="/" legacyBehavior>
-                <a className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 rounded-md hover:bg-blue-200">
+                <a className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1.5 rounded-md hover:bg-blue-200">
                   Home
                 </a>
               </Link>
@@ -145,8 +131,8 @@ export default function Navbar() {
                         "group bg-blue-100 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
                       )}
                     >
-                      <span>Solutions</span>
-                      <span className="ml-2">
+                      <span className="mx-4">Solutions</span>
+                      <span className="ml-3 my-2">
                         <ChevronDownIcon
                           className={classNames(
                             open ? "text-gray-700" : "text-gray-800",
@@ -165,7 +151,8 @@ export default function Navbar() {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 -translate-y-1"
                     >
-                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-blue-100">s
+                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-blue-100">
+                        s
                         <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-16">
                           {solutions.map((item) => (
                             <a
@@ -213,7 +200,7 @@ export default function Navbar() {
               </Popover.Button>
             </div>
             <div className="flex items-center">
-              <a href="#" className="flex">
+              <Link href="/" className="flex">
                 <span className="sr-only">Workflow</span>
                 <Image
                   className="h-full w-screen"
@@ -228,12 +215,12 @@ export default function Navbar() {
                   }}
                   quality={80}
                 />
-              </a>
+              </Link>
             </div>
             <div className="hidden md:flex space-x-10">
               {/* About Us */}
               <Link href="/aboutus" legacyBehavior>
-                <a className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 rounded-md hover:bg-blue-200">
+                <a className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1.5 rounded-md hover:bg-blue-200">
                   About Us
                 </a>
               </Link>
@@ -247,7 +234,7 @@ export default function Navbar() {
                         "group bg-blue-100 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
                       )}
                     >
-                      <span className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 rounded-md hover:bg-blue-200">
+                      <span className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1.5 rounded-md hover:bg-blue-200">
                         Technologies
                       </span>
                       <span className="bg-blue-100 px-1 py-1.5 rounded-md hover:bg-blue-200">
@@ -270,7 +257,7 @@ export default function Navbar() {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 -translate-y-1"
                     >
-<Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-blue-100 px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12 xl:py-16">
+                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-blue-100 px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12 xl:py-16">
                         <div className="absolute inset-0 flex">
                           <div className="bg-blue-100 w-1/2" />
                           <div className="bg-gray-50 w-1/2" />
@@ -279,7 +266,7 @@ export default function Navbar() {
                         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
                           <nav className="grid gap-y-10 px-4 py-8 blue-100 sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                             <div>
-                            <span className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 rounded-md hover:bg-blue-200">
+                              <span className="text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 rounded-md hover:bg-blue-200">
                                 Solutions
                               </span>
                               <ul role="list" className="mt-5 space-y-6">
@@ -352,46 +339,28 @@ export default function Navbar() {
         </div>
 
         <Transition
-          as={Fragment}
-          enter="duration-200 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-100 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
+       
+          enter="transition duration-200 ease-out"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition duration-100 ease-in"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
         >
-          <Popover.Panel
-            focus
-            className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden bg-blue-100"
-          >
-            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 blue-100 divide-y-2 divide-gray-50">
+          <Popover.Panel className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-blue-100 divide-y-2 divide-gray-50">
               <div className="pt-5 pb-6 px-5 sm:pb-8">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Image
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                      alt="Workflow"
-                      width={150}
-                      height={100}
-                      style={{
-                        height: "100%",
-                        width: "100%",
-                        objectFit: "cover",
-                      }}
-                      quality={80}
-                    />
-                  </div>
+                
                   <div className="-mr-2">
-                    <Popover.Button className="blue-100 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300">
-                      <span className="sr-only">Close menu</span>
-                      <XIcon className="h-6 w-6" aria-hidden="true" />
-                    </Popover.Button>
+                  <Popover.Button className="bg-blue-100 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300">
+          <span className="sr-only">Toggle menu</span>
+          <XIcon className="h-6 w-6" aria-hidden="true" />
+        </Popover.Button>
                   </div>
-                </div>
                 <div className="mt-6 sm:mt-8">
                   <nav>
-                    <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
+                    <a className="text-3xl">Solutions</a>
+                    <div className="grid gap-7 py-4 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
                       {solutions.map((item) => (
                         <a
                           key={item.name}
@@ -413,32 +382,46 @@ export default function Navbar() {
               <div className="py-6 px-5">
                 <div className="grid grid-cols-2 gap-4">
                   <Link href="/" legacyBehavior>
-                    <a className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1  hover:bg-blue-200">
+                    <a
+                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
+                    >
                       Home
                     </a>
                   </Link>
-
-                  <Link href="/engagement" legacyBehavior>
-                    <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Engage with ECEFG
-                    </a>
-                  </Link>
-
                   <Link href="/aboutus" legacyBehavior>
-                    <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a
+                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
+                    >
                       About Us
                     </a>
                   </Link>
-
-                  <Link href="/technologies" legacyBehavior>
-                    <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Technologies
+                  <Link href="/technologies/wastemgt" legacyBehavior>
+                    <a
+                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
+                    >
+                      Waste Management
                     </a>
                   </Link>
-
-                  <Link href="/contact" legacyBehavior>
-                    <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Contact Us
+                  <Link href="/technologies/biofuel" legacyBehavior>
+                    <a
+                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
+                    >
+                      Biofuel
+                    </a>
+                  </Link>
+                  <Link href="/technologies/heat&power" legacyBehavior>
+                    <a
+                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
+                    >
+                      Heat&Power
+                    </a>
+                  </Link>
+                  <Link href="/technologies/battery" legacyBehavior>
+                    <a
+                      
+                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
+                    >
+                      Battery Energy Storage
                     </a>
                   </Link>
                 </div>

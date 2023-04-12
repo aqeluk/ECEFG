@@ -17,7 +17,6 @@ export default function Home() {
   Discover our fully-funded, 'off-balance-sheet' approach that employs cutting-edge, energy-efficient technology to empower you to produce your own heat and power. This innovative solution is geared towards addressing the modern energy crisis while contributing to a greener and more sustainable future."
   button="Learn More Today"
   buttonLink="/aboutus"
-  backgroundImage=""
   backgroundColor="bg-blue-100"
 />
       </div>

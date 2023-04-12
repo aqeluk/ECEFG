@@ -1,8 +1,6 @@
-import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
-
 export default function ContactBanner() {
   return (
-    <div className="relative bg-white">
+    <div id='contact' className="relative bg-white">
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50" />
       </div>
@@ -13,23 +11,7 @@ export default function ContactBanner() {
             <p className="mt-3 text-lg leading-6 text-gray-500">
             Let us know how we can help and we aim to respond within 24 hours
             </p>
-            <dl className="mt-8 text-base text-gray-500">
-              
-              <div className="mt-6">
-                <dt className="sr-only">Phone number</dt>
-                <dd className="flex">
-                  <PhoneIcon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                  <span className="ml-3">+44(0) 1206 716241</span>
-                </dd>
-              </div>
-              <div className="mt-3">
-                <dt className="sr-only">Email</dt>
-                <dd className="flex">
-                  <MailIcon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                  <span className="ml-3">support@ECEFG.com</span>
-                </dd>
-              </div>
-            </dl>
+            
             
           </div>
         </div>

@@ -1,9 +1,7 @@
-import { SVGProps } from "react"
-
 const navigation = {
     main: [
-      { name: 'Contact Us', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
+      { name: 'Contact Us', href: '#contact' },
+      { name: 'Privacy Policy', href: '/privacy' },
       { name: 'About', href: '/aboutus' },
     ],
   }
@@ -21,7 +19,7 @@ const navigation = {
               </div>
             ))}
           </nav>
-          <p className="mt-8 text-center text-base text-gray-400">&copy; 2023 ECEFG Ltd. All rights reserved.</p>
+          <p className="mt-8 text-center text-base text-gray-400">&copy; All rights reserved.</p>
         </div>
       </footer>
     )
