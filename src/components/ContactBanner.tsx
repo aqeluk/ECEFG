@@ -1,4 +1,31 @@
+import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function ContactBanner() {
+  const [formData, setFormData] = useState({ fullName: '', email: '', phone: '', message: '' });
+  const [emailSent, setEmailSent] = useState(false);
+
+  useEffect(() => {
+    if (emailSent) {
+      toast.success('Thank you for contacting us! Our renewable energy experts will get back to you shortly.', {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 5000, // close the toast automatically after 5 seconds
+        onClose: () => setEmailSent(false),
+      });
+      setFormData({ fullName: '', email: '', phone: '', message: '' });
+    }
+  }, [emailSent]);
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    // Perform the email sending logic here
+    setEmailSent(true);
+  };
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   return (
     <div id='contact' className="relative bg-white">
       <div className="absolute inset-0">
@@ -17,16 +44,18 @@ export default function ContactBanner() {
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+            <form onSubmit={handleSubmit} method="POST" className="grid grid-cols-1 gap-y-6">
               <div>
-                <label htmlFor="full-name" className="sr-only">
+                <label htmlFor="fullName" className="sr-only">
                   Full name
                 </label>
                 <input
                   type="text"
-                  name="full-name"
-                  id="full-name"
+                  name="fullName"
+                  id="fullName"
                   autoComplete="name"
+                  value={formData.fullName}
+      onChange={handleChange}
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                   placeholder="Full name"
                 />
@@ -40,6 +69,8 @@ export default function ContactBanner() {
                   name="email"
                   type="email"
                   autoComplete="email"
+                  value={formData.email}
+      onChange={handleChange}
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                   placeholder="Email"
                 />
@@ -53,6 +84,8 @@ export default function ContactBanner() {
                   name="phone"
                   id="phone"
                   autoComplete="tel"
+                  value={formData.phone}
+      onChange={handleChange}
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                   placeholder="Phone"
                 />
@@ -65,6 +98,8 @@ export default function ContactBanner() {
                   id="message"
                   name="message"
                   rows={4}
+                  value={formData.message}
+      onChange={handleChange}
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                   placeholder="Message"
                   defaultValue={''}
@@ -82,6 +117,7 @@ export default function ContactBanner() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }
