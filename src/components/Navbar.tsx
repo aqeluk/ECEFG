@@ -4,6 +4,7 @@ import {
   BriefcaseIcon,
   ChartBarIcon,
   CursorClickIcon,
+  HomeIcon,
   InformationCircleIcon,
   MenuIcon,
   NewspaperIcon,
@@ -14,6 +15,43 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "./Banner";
+
+const links = [
+  {
+    name: "Home",
+    description: "Home Page",
+    href: "/",
+    icon: HomeIcon,
+  },
+  {
+    name: "Our Operations",
+    description: "Get a better understanding of our collborative work",
+    href: "/engagement/ourwork",
+    icon: ChartBarIcon,
+  },
+  {
+    name: "Project Funding",
+    description: "Speak volumes through contracts with ECEFG",
+    href: "/engagement/funding",
+    icon: CursorClickIcon,
+  },
+  {
+    name: "Waste Management",
+    href: "/technologies/wastemgt",
+    icon: InformationCircleIcon,
+  },
+  { name: "Biofuel", href: "/technologies/biofuel", icon: OfficeBuildingIcon },
+  {
+    name: "Heat & Power",
+    href: "/technologies/heat&power",
+    icon: NewspaperIcon,
+  },
+  {
+    name: "Battery Energy Storage",
+    href: "/technologies/battery",
+    icon: BriefcaseIcon,
+  },
+]
 
 const solutions = [
   {
@@ -152,7 +190,6 @@ export default function Navbar() {
                       leaveTo="opacity-0 -translate-y-1"
                     >
                       <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-blue-100">
-                        s
                         <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-16">
                           {solutions.map((item) => (
                             <a
@@ -361,7 +398,7 @@ export default function Navbar() {
                   <nav>
                     <a className="text-3xl">Solutions</a>
                     <div className="grid gap-7 py-4 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
-                      {solutions.map((item) => (
+                      {links.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
@@ -377,53 +414,6 @@ export default function Navbar() {
                       ))}
                     </div>
                   </nav>
-                </div>
-              </div>
-              <div className="py-6 px-5">
-                <div className="grid grid-cols-2 gap-4">
-                  <Link href="/" legacyBehavior>
-                    <a
-                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
-                    >
-                      Home
-                    </a>
-                  </Link>
-                  <Link href="/aboutus" legacyBehavior>
-                    <a
-                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
-                    >
-                      About Us
-                    </a>
-                  </Link>
-                  <Link href="/technologies/wastemgt" legacyBehavior>
-                    <a
-                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
-                    >
-                      Waste Management
-                    </a>
-                  </Link>
-                  <Link href="/technologies/biofuel" legacyBehavior>
-                    <a
-                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
-                    >
-                      Biofuel
-                    </a>
-                  </Link>
-                  <Link href="/technologies/heat&power" legacyBehavior>
-                    <a
-                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
-                    >
-                      Heat&Power
-                    </a>
-                  </Link>
-                  <Link href="/technologies/battery" legacyBehavior>
-                    <a
-                      
-                      className="rounded-md text-base font-medium text-gray-700 hover:text-gray-900 bg-blue-100 px-3 py-1 hover:bg-blue-200"
-                    >
-                      Battery Energy Storage
-                    </a>
-                  </Link>
                 </div>
               </div>
             </div>
